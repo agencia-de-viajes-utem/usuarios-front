@@ -1,0 +1,33 @@
+/* UserMenu.css */
+
+.user-menu {
+    background-color: #219ebc;
+    /* Fondo oscuro */
+    color: white;
+    /* Texto blanco */
+    padding: 10px;
+    width: 100%;
+}
+
+.horizontal-menu {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    /* Muestra las opciones en una fila horizontal */
+    justify-content: center;
+}
+
+.horizontal-menu li {
+    margin-right: 30px;
+    /* Espaciado entre las opciones */
+    cursor: pointer;
+}
+
+.horizontal-menu li:last-child {
+    margin-right: 0;
+    /* Elimina el margen derecho de la última opción */
+}
+
+.horizontal-menu li:hover {
+    text-decoration: underline;
+}
