@@ -2,19 +2,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: golang-service
+  name: usuarios-front
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: golang-service
+      app: usuarios-front
   template:
     metadata:
       labels:
-        app: golang-service
+        app: usuarios-front
     spec:
       containers:
-      - name: golang-service
-        image: gcr.io/taller-isw-2023s2/gcr-alpine:{GITHUB_SHA}
+      - name: usuarios-front
+        image: gcr.io/annular-form-401215/gcr-alpine:{GITHUB_SHA}
         ports:
-        - containerPort: 8888
+        - containerPort: 4000

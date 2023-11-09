@@ -1,24 +1,25 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: ingress-prueba
+  name: usuarios-front
   namespace: default
   annotations:
-    kubernetes.io/ingress.class: kong
+    kubernetes.io/ingress.class: nginx
     cert-manager.io/cluster-issuer: letsencrypt-prod
+    acme.cert-manager.io/http01-edit-in-place: "true"
 spec:
   rules:
-  - host: prueba.tisw.cl
+  - host: usuarios.lumonidy.studio
     http:
       paths:
       - backend:
           service:
-            name: golang-service
+            name: usuarios-front
             port:
               number: 80
         pathType: Prefix
         path: /
   tls:
   - hosts:
-    - prueba.tisw.cl
-    secretName: prueba-secret
+    - usuarios.lumonidy.studio
+    secretName: usuarios-front-secret
